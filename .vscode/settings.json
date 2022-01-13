@@ -1,3 +1,33 @@
 {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "explorer.confirmDelete": false,
+    
+    "liveSassCompile.settings.formats":[
+        {
+        "format": "expanded",   // 압축옵션: expanded, compact, compressed, nested (Default expanded)
+        "extensionName": ".css",  
+        "savePath": "/public/css" // 컴파일된 css 저장 경로
+        },
+    ],
+    "liveSassCompile.settings.generateMap": false, // map 파일 생성여부
+    "liveSassCompile.settings.excludeList": [
+        "**/node_modules/**",
+        ".vscode/**"
+    ],
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 10"
+    ],
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "on",
+    "emmet.triggerExpansionOnTab": true,
+    "editor.tabCompletion": "on"
+
+      
 }
