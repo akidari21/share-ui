@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./public/css/scrollspy.css" />
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<!-- nav -->
+			<header class="header">
+				<nav class="gnb">
+					<ul class="list-menu">
+						<li>
+							<a href="#m1" class="nav-link active">menu1</a>
+						</li>
+						<li>
+							<a href="#m2" class="nav-link">menu2</a>
+						</li>
+						<li>
+							<a href="#m3" class="nav-link">menu3</a>
+						</li>
+						<li>
+							<a href="#m4" class="nav-link">menu4</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- heading -->
+			<h1>Scrollspy Title</h1>
+
+			<!-- section -->
+			<section id="m1" class="tmp-section">
+				<h2>section 1</h2>
+			</section>
+			<section id="m2" class="tmp-section">
+				<h2>section 2</h2>
+			</section>
+			<section id="m3" class="tmp-section">
+				<h2>section 3</h2>
+			</section>
+			<section id="m4" class="tmp-section">
+				<h2>section 4</h2>
+			</section>
+		</div>
+
+		<script>
+			$(function () {
+				var sectionIds = $(".list-menu a.nav-link");
+
+				$(document).scroll(function () {
+					sectionIds.each(function () {
+						var container = $(this).attr("href");
+						var containerOffset = $(container).offset().top;
+						var containerHeight = $(container).outerHeight();
+						var containerBottom = containerOffset + containerHeight;
+						var scrollPosition = $(document).scrollTop();
+
+						if (
+							scrollPosition < containerBottom - 20 &&
+							scrollPosition >= containerOffset - 20
+						) {
+							$(this).addClass("active");
+						} else {
+							$(this).removeClass("active");
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
